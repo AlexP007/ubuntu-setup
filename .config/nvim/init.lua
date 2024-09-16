@@ -29,9 +29,13 @@ vim.keymap.set("v", "<M-l>", ">gv")
 
 opt.number = true 
 opt.ignorecase = true
+opt.relativenumber = true
+opt.expandtab = true
+opt.autoindent = true
 opt.tabstop = 2
 opt.shiftwidth = 2
-opt.expandtab = true
+opt.softtabstop = 2
+opt.encoding = 'UTF-8'
 
 local lsp_zero = require('lsp-zero')
 
