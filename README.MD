@@ -85,6 +85,11 @@ netrw for custom keybindings https://github.com/prichrd/netrw.nvim
 
 https://habr.com/ru/articles/149817/
 
+how to debug lsp:
+
+`:lua print(vim.inspect(vim.lsp.get_active_clients()))`
+
+
 intelephense docs https://www.npmjs.com/package/@yaegassy/coc-intelephense
 
 keys https://lsp-zero.netlify.app/v3.x/language-server-configuration.html
