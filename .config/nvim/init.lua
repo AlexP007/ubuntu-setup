@@ -141,3 +141,18 @@ vim.api.nvim_create_autocmd('BufWritePost', {
       vim.fn.jobstart(code)
   end
 })
+
+require('editorconfig').properties.charset = function(bufnr, val)
+  assert(vim.tbl_contains({"utf-8", "utf-8-bom", "latin1", "utf-16be", "utf-16le", "cp1251"}, val), "charset must be one of 'utf-8', 'utf-8-bom', 'latin1', 'utf-16be', or 'utf-16le', 'cp1251'")
+  if ((val == "utf-8") or (val == "utf-8-bom")) then
+    vim.bo[bufnr]["fileencoding"] = "utf-8"
+    vim.bo[bufnr]["bomb"] = (val == "utf-8-bom")
+    return nil
+  elseif val == 'cp1251' then
+    vim.bo[bufnr]["fileencoding"] = val
+    cmd("e ++enc=" .. val)
+  else
+    vim.bo[bufnr]["fileencoding"] = val
+    return nil
+  end
+end
