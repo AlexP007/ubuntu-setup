@@ -20,7 +20,12 @@ Plug('williamboman/mason-lspconfig.nvim')
 
 Plug('nvim-lua/plenary.nvim')
 
+Plug('EdenEast/nightfox.nvim') 
+Plug('nordtheme/vim')
+
 vim.call('plug#end')
+
+vim.cmd('colorscheme nord')
 
 vim.keymap.set("v", "<M-j>", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "<M-k>", ":m '<-2<CR>gv=gv")
