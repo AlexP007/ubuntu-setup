@@ -41,6 +41,8 @@ opt.tabstop = 2
 opt.shiftwidth = 2
 opt.softtabstop = 2
 opt.encoding = 'UTF-8'
+opt.fileencodings = 'utf-8', 'utf-8-bom', 'cp1251'
+opt.guifont = 'FiraCode Nerd Font Mono:h10'
 
 local lsp_zero = require('lsp-zero')
 
