@@ -27,10 +27,10 @@ vim.call('plug#end')
 
 vim.cmd('colorscheme nord')
 
-vim.keymap.set("v", "<M-j>", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "<M-k>", ":m '<-2<CR>gv=gv")
-vim.keymap.set("v", "<M-h>", "<gv")
-vim.keymap.set("v", "<M-l>", ">gv")
+vim.keymap.set("v", "<C-j>", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "<C-k>", ":m '<-2<CR>gv=gv")
+vim.keymap.set("v", "<C-h>", "<gv")
+vim.keymap.set("v", "<C-l>", ">gv")
 
 opt.number = true 
 opt.ignorecase = true
@@ -76,6 +76,8 @@ local get_intelephense_license = function ()
     return string.gsub(content, "%s+", "")
 end
 
+require('lspconfig').perlpls.setup({})
+
 require('mason').setup({})
 require('mason-lspconfig').setup({
   handlers = {
@@ -101,6 +103,9 @@ require('mason-lspconfig').setup({
 	    }   
     })
     end
+    ['jdtls'] = function()
+        require('lspconfig').jdtls.setup({})
+    end,  
   }
 })
 
