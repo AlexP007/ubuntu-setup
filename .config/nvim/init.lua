@@ -4,6 +4,7 @@ local cmd = vim.cmd
 local opt = vim.opt
 
 vim.api.nvim_set_option('clipboard','unnamedplus') 
+vim.g.editorconfig = true
 
 vim.call('plug#begin')
 
@@ -19,13 +20,15 @@ Plug('williamboman/mason.nvim')
 Plug('williamboman/mason-lspconfig.nvim')
 
 Plug('nvim-lua/plenary.nvim')
+Plug('f-person/git-blame.nvim')
 
 Plug('EdenEast/nightfox.nvim') 
 Plug('nordtheme/vim')
+Plug('michaeldyrynda/carbon')
 
 vim.call('plug#end')
 
-vim.cmd('colorscheme nord')
+vim.cmd('colorscheme carbon')
 
 vim.keymap.set("v", "<C-j>", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "<C-k>", ":m '<-2<CR>gv=gv")
@@ -168,3 +171,7 @@ require('editorconfig').properties.charset = function(bufnr, val)
     return nil
   end
 end
+
+require('gitblame').setup({
+    enabled = false,
+})
