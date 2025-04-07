@@ -1,0 +1,18 @@
+[user]
+  name = Aleksandr Panteleev
+  email = aleksandr.panteleev@vk.team
+
+[pull]
+  rebase = true
+
+[push]
+  default = current
+
+[fetch]
+  prune = true
+
+[alias]
+  nah = !git reset --hard && git clean -fd
+
+[http]
+  version = HTTP/1.1
