@@ -6,6 +6,10 @@ local opt = vim.opt
 vim.api.nvim_set_option('clipboard','unnamedplus') 
 vim.g.editorconfig = true
 
+vim.diagnostic.config({
+  virtual_text = true,
+})
+
 vim.call('plug#begin')
 
 Plug('tpope/vim-fugitive')
